@@ -1,1 +1,28 @@
-This is the README for the application ScanComponentsPCB
+                            ScanComponentsPCB
+
+(You can find the bdd file at  ScanComponentsPCB/ScanComponentPCB/application.linux64/ReferencesComponents.db)
+
+(You can find the file text wich all the 307 component of the SmoothieBoard electronic Card,
+output of the electronic Soft :EAGLE at ScanComponentsPCB/ScanComponentPCB/components)
+
+The git project of the SoomthieBoard : https://github.com/Smoothieware/Smoothieboard
+
+
+1) run the software for your OS, you arrive on the main window:
+
+	The main window consists of three parts mainly: a party selects its
+webcam (the list any webcam software, resolution and FPS (Frame Per Second) available connected to the PC the test bench). A second portion that allows you to select the type of card you want to test. Then the part of the various buttons available for launching various software functionality.
+
+
+2) selection of the webcam:
+
+	If the operator fails to select a webcam, the software defaults to the webcam plugged in first available port (USB webcam or computer) ('/ dev video0), and the resolution of 640 * 480. The ideal is to make a USB ('/ dev / video1') webcam with a resolution of 1920 * 1080.
+
+3) select the type of card:
+	
+	If the user does not select a reference card, when launching the "Check your feature
+electronic card "software be asked to upload the image (jpg preferred) reference by type
+card he wants to test. If a card is highlighted by default as we have seen on
+previous images.
+
+
