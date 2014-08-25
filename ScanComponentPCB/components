@@ -1,0 +1,317 @@
+Partlist
+
+Exported from smoothieboard-5driver.brd at 22/08/2014 13:38:03
+
+EAGLE Version 7.1.0 Copyright (c) 1988-2014 CadSoft
+
+Assembly variant: 
+
+Part     Value                   Package              Library              Position (mil)        Orientation   Position(mm)
+
+C1       .1uF                    C0603                resistor             (825 2047.5)          R90           (20.995 52)
+C2       12pF                    C0603                rcl                  (1785 1265)           R270          (45.44 32.131)
+C3       12pF                    C0603                rcl                  (1875 1155)           R180          (47.625 29.337)
+C4       18pF                    C0603                rcl                  (737.5 987.5)         R0            (18.73 25.0825)
+C5       18pF                    C0603                rcl                  (737.5 800)           R0            (18.73 20.32)
+C6       .1uF                    C0603                rcl                  (1761.61417 1419.17323) R315        (44.75  36)
+C7       10uF                    EIA3216              SparkFun             (2850 1600)           R270          (72.39 40.64)
+C8       .1uF                    C0603                rcl                  (2597.5 1882.5)       R225          (66  47.8155)
+C9       .1uF                    C0603                rcl                  (2495 1482.5)         R135          (63.373 37.65)
+C10      .1uF                    C0603                rcl                  (2270 1275)           R135          (57.65 32.385)
+C11      .1uF                    C0603                rcl                  (1635 1925)           R315          (41.53 48.89)
+C12      .1uF                    C0603                rcl                  (1840 2175)           R135          (46.736 55.245)
+C13      .1uF                    C0603                rcl                  (1717.91339 1265.35433) R90         (43.63 32.14)
+C14      .1uF                    C0603                rcl                  (2297.5 2192.5)       R225          (58.3565 55.69)
+C15      .22uF                   C0603                rcl                  (455 2780)            R0
+C16      .22uF                   C0603                rcl                  (1425 2795)           R0
+C17      .1uF                    C0603                rcl                  (435 2840)            R0
+C18      .1uF                    C0603                rcl                  (1425 2857.5)         R0
+C19      .1uF                    C0603                rcl                  (435 2905)            R180
+C20      .1uF                    C0603                rcl                  (1425 2920)           R180
+C21      10uF                    EIA3216              SparkFun             (275 3205)            R270
+C22      10uF                    EIA3216              SparkFun             (270 2985)            R270
+C23      10uF                    EIA3216              SparkFun             (270 2765)            R270
+C24      10uF                    EIA3216              SparkFun             (320 2550)            R180
+C25      .1uF                    C0603                rcl                  (737.5 2687.5)        R180
+C26      100uF                   PANASONIC_E          SparkFun             (1107.5 3835)         R270
+C27      .1uF                    C0603                rcl                  (427.5 3452.5)        R135
+C28      .1uF                    C0603                rcl                  (1737.5 2912.5)       R0
+C29      100uF                   PANASONIC_E          SparkFun             (2107.5 3860)         R270
+C30      .1uF                    C0603                rcl                  (1445 3447.5)         R135
+C31      .1uF                    C0603                rcl                  (2632.5 2345)         R270
+C32      .22uF                   C0603                rcl                  (2382.5 2757.5)       R0
+C33      .22uF                   C0603                rcl                  (3380 2810)           R0
+C34      .1uF                    C0603                rcl                  (2382.5 2822.5)       R0
+C35      .1uF                    C0603                rcl                  (3380 2875)           R0
+C36      .1uF                    C0603                rcl                  (2382.5 2887.5)       R180
+C37      .1uF                    C0603                rcl                  (3380 2940)           R180
+C38      .1uF                    C0603                rcl                  (2742.5 2892.5)       R0
+C39      100uF                   PANASONIC_E          SparkFun             (3096.10236 3848.18898) R270
+C40      .1uF                    C0603                rcl                  (3426.76772 3451.76772) R135
+C41      .1uF                    C0603                rcl                  (3742.5 2942.5)       R0
+C42      100uF                   PANASONIC_E          SparkFun             (3975.37402 2841.98819) R90
+C43      .1uF                    C0603                rcl                  (2435 3460)           R135
+C44      .1uF                    C0603                resistor             (1200 2427.5)         R270
+C45      10uF                    EIA3216              SparkFun             (1122.5 1677.5)       R90
+C46      .1uF                    C0603                resistor             (1085 1857.5)         R270
+C47      .1uF                    C0603                resistor             (962.5 2172.5)        R270
+C48      1uF                     EIA3216              SparkFun             (1462.5 1662.5)       R90
+C49      470pF                   C0603K               resistor             (1537.5 1687.5)       R270
+C50      10uF                    EIA3216              SparkFun             (1480 2005)           R180
+C51      .1uF                    C0603                resistor             (1460 2085)           R0
+C52      .1uF                    C0603                resistor             (1030 1635)           R90
+C53      .1uF                    C0603                resistor             (1017.5 1265)         R270
+C54      18pF                    C0603                resistor             (907.5 1760)          R0
+C55      18pF                    C0603                resistor             (920 1670)            R0
+C56      18pF                    C0603                resistor             (920 1235)            R0
+C57      18pF                    C0603                resistor             (920 1400)            R0
+C58      12pF                    C0603                resistor             (1385 1637.5)         R270
+C59      12pF                    C0603                resistor             (1205 1722.5)         R270
+C60      100uF                   PANASONIC_E          SparkFun             (2265 895)            R270
+C61      10uF                    EIA3216              SparkFun             (4282.5 347.5)        R180
+C62      .1uF                    C0603                resistor             (2639.94094 671.37795) R270
+C63      100uF                   PANASONIC_D          SparkFun             (4342.5 577.5)        R90
+C64      10uF                    EIA3216              SparkFun             (2962.5 1600)         R270
+C65      .1uF                    C0603                resistor             (3224.80315 1793.2874) R180
+C66      .1uF                    C0603                resistor             (2723.37795 794.06299) R180
+C67      1uF                     C0805                resistor             (763.77953 2186.61417) R90
+C68      .1uF                    C0603                rcl                  (3400 2625)           R0
+C69      .1uF                    C0603                rcl                  (4360.72835 2929.92126) R180
+C70      .1uF                    C0603                rcl                  (4364.37008 2845.07874) R0
+C71      .1uF                    C0603                rcl                  (4700 2925)           R0
+C72      .22uF                   C0603                rcl                  (4366.92913 2770.07874) R0
+C73      .1uF                    C0603                rcl                  (4402.7564 3430.70694) R135
+C74      100uF                   PANASONIC_E          SparkFun             (4091.53543 3316.14173) R270
+C75      .1uF                    C0603                resistor             (4425 1437.5)         R0
+C76      .1uF                    C0603                rcl                  (3762.5 1487.5)       R270
+C77      .33uF                   C0603                rcl                  (3812.5 2162.5)       R90
+C78      .1uF                    C0603                rcl                  (1212.5 1300)         R90
+C79      .1uF                    C0603                rcl                  (1412.5 1300)         R90
+C80      .1uF                    C0603                rcl                  (1612.5 1300)         R90
+C81      .1uF                    C0603                rcl                  (1087.5 1125)         R90
+C82      .1uF                    C0603                rcl                  (1287.5 1125)         R90
+C83      .1uF                    C0603                rcl                  (1487.5 1125)         R90
+D1       MBRA210LT3              SMADIODE             microbuilder         (3077.5 1280)         R270
+D2       MBRA210LT3              SMADIODE             microbuilder         (4067.5 2400)         R0
+D3       VS-25CTQ045S            TO263AB              Geos                 (4282.5 1765)         R180
+D4       B1100-13-F              SMADIODE             microbuilder         (4037.5 2012.5)       R0
+D5       15v                     SMB                  diode                (3887.5 1425)         R270
+D6       MBRA210LT3              SMADIODE             microbuilder         (3562.5 1487.5)       R0
+FB1                              0603                 microbuilder         (895 2172.5)          R90
+IC1      LPC1769                 LQFP100              microbuilder         (2075 1745)           R315
+IC2      A4982                   ETSSOP24             A4982                (595 3160)            R0
+IC3      A4982                   ETSSOP24             A4982                (1605 3160)           R0
+IC4      MCP44X1                 TSSOP20              Geos                 (2435 2447.5)         R180
+IC5      A4982                   ETSSOP24             A4982                (2612.5 3160)         R0
+IC6      A4982                   ETSSOP24             A4982                (3605 3160)           R0
+IC7                              SOT23-5              microbuilder         (1300 2375)           R0
+IC8                              QFN24_4MM            microbuilder         (1190 2095)           R90
+IC9      MCP44X1                 TSSOP20              Geos                 (3544.68504 2418.11024) R0
+IC10     LM1117-3.3V             SOT223               SparkFun             (3197.5 1610)         R270
+IC11     78L12F                  SOT89                linear               (2518.89764 668.11024) R180
+IC12     A4982                   ETSSOP24             A4982                (4542.81496 3150.3937) R0
+IC13     R-78E-5.0               R-78                 logxen               (3500 1825)           R270
+IC14     TC4427                  SOIC8                custom_esorensen     (2715 930)            R270
+IC15     TC4427                  SOIC8                custom_esorensen     (4425 1312.5)         R90
+J1                               10X04MTA             con-amp              (595 3760)            R0
+J2                               10X04MTA             con-amp              (1607.5 3770)         R0
+J3                               10X04MTA             con-amp              (2612.5 3777.5)       R0
+J4                               10X04MTA             con-amp              (3605 3785)           R0
+J5                               10X04MTA             con-amp              (4537.5 3775)         R0
+J6                               10X02MTA             con-amp              (3715.94488 260)      R0
+J7                               10X02MTA             con-amp              (4800 950)            R90
+J8                               10X02MTA             con-amp              (3365 260)            R180
+J9                               10X02MTA             con-amp              (2954.72441 260)      R0
+J10      POWER_JACKSMD           POWER_JACK_SMD       SparkFun             (4932.5 1860)         R180
+J11                              10X02MTA             con-amp              (2025 260)            R180
+J13                              10X02MTA             con-amp              (4737.5 260)          R0
+JP1                              1X04_NO_SILK         SparkFun             (2937.5 1325)         R180
+JP2                              1X03_NO_SILK         SparkFun             (2377.5 2140)         R315
+JP3                              1X03_NO_SILK         SparkFun             (2587.5 2060)         R135
+JP4                              1X03_NO_SILK         SparkFun             (900 2400)            R0
+JP5                              MOLEX-1X6            SparkFun             (804.6063 454.33071)  R180
+JP6                              1X03_NO_SILK         SparkFun             (1100 2500)           R180
+JP7                              1X04_NO_SILK         SparkFun             (952.5 2977.5)        R270
+JP8                              1X04_NO_SILK         SparkFun             (3362.5 1900)         R90
+JP9                              1X04_NO_SILK         SparkFun             (1940 3000)           R270
+JP10                             1X04_NO_SILK         SparkFun             (2937.5 1225)         R180
+JP11                             JP1                  jumper               (2245 500)            R270
+JP12                             1X04_NO_SILK         SparkFun             (2972.5 2960)         R270
+JP14                             MOLEX-1X3            SparkFun             (282.5 102.5)         R180
+JP15                             1X04_NO_SILK         SparkFun             (3155 2887.5)         R270
+JP16                             MOLEX-1X3            SparkFun             (592.5 102.5)         R180
+JP17                             1X03                 SparkFun             (2217.5 2970)         R270
+JP18                             1X04_NO_SILK         SparkFun             (4212.5 2925)         R270
+JP19                             MOLEX-1X3            SparkFun             (902.5 102.5)         R180
+JP20                             1X03                 SparkFun             (1915 942.5)          R180
+JP21                             MOLEX-1X3            SparkFun             (1212.5 102.5)        R180
+JP22                             MOLEX-1X3            SparkFun             (1522.5 102.5)        R180
+JP23                             1X02                 SparkFun             (1125 470)            R0
+JP24                             1X02                 SparkFun             (1125 570)            R0
+JP25                             1X03                 SparkFun-Connectors  (1585 395)            R90
+JP26                             MOLEX-1X3            SparkFun             (140 270)             R90
+JP27                             JP1                  jumper               (2242.5 625)          R270
+JP28                             JP1                  jumper               (4137.5 550)          R0
+JP29                             1X04_NO_SILK         SparkFun             (2850 1785)           R90
+JP30                             SJ_2S                SparkFun             (1423 2648)           R270
+JP31                             SJ_2S                SparkFun             (1279.5 2647.5)       R90
+JP32                             1X05                 SparkFun             (1512.5 1462.5)       R180
+JP33                             1X05                 SparkFun             (2937.5 1125)         R180
+JP34                             1X04_NO_SILK         SparkFun             (2987.5 2300)         R0
+L1                               0603                 SparkFun             (1670 1460)           R225
+LED1                             CHIP-LED0805         led                  (3077.5 1810)         R270
+LED2                             CHIP-LED0805         led                  (3077.5 1882.5)       R270
+LED3                             CHIP-LED0805         led                  (3077.5 1957.5)       R270
+LED4                             CHIP-LED0805         led                  (3077.5 2035)         R270
+LED5                             CHIP-LED0805         led                  (3362.5 375)          R90
+LED6                             CHIP-LED0805         led                  (3712.5 375)          R90
+LED7                             CHIP-LED0805         led                  (2957.5 407.5)        R270
+LED8                             CHIP-LED0805         led                  (2010 412.5)          R90
+LED9                             CHIP-LED0805         led                  (3077.5 2110)         R270
+LED10                            CHIP-LED0805         led                  (3077.5 2192.5)       R270
+LED11                            CHIP-LED0805         led                  (4687.5 912.5)        R180
+LED12                            CHIP-LED0805         led                  (4675 400)            R90
+POWER    POWER                   MOLEX8981            Geos                 (4432.5 1710)         R0
+Q1       BSL207SP                SC74_INFINEON        transistor-fet       (807.08661 630.11811) R90
+Q2       12MHz                   CRYSTAL_3.2X2.5      microbuilder         (1875 1270)           R90
+Q3       25MHz                   CRYSTAL_3.2X2.5      microbuilder         (1295 1715)           R270
+Q4       ZXMN4A06                SOT230P700X160-4N    ipc-7351-transistor  (4487.5 912.5)        R0
+Q5       AOT240L                 TO220BV              transistor-power     (4737.5 475)          R180
+Q6       AOT240L                 TO220BV              transistor-power     (2875 475)            R180
+Q7       AOT240L                 TO220BV              transistor-power     (1872.5 472.5)        R180
+Q8       ZXMN4A06                SOT230P700X160-4N    ipc-7351-transistor  (3275 925)            R270
+Q9       ZXMN4A06                SOT230P700X160-4N    ipc-7351-transistor  (3650 922.5)          R270
+Q10      SUD50P04-08-GE3         TO252                transistor-fet       (4087.5 1687.5)       R0
+R1       10K                     R0603                resistor             (774.56693 2044.25197) R90
+R2       10K                     R0603                resistor             (829.68504 2268.07087) R270
+R3       10K                     R0603                resistor             (708.50394 2044.25197) R90
+R4       100K                    R0603                resistor             (3525 2625)           R180
+R5       2.2k                    R0603                resistor             (2692.78937 1439.81053) R45
+R6       2.2k                    R0603                resistor             (2797.5 1430)         R90
+R7       1.5K                    R0603                resistor             (737.5 737.5)         R180
+R8       33R                     R0603                resistor             (737.5 862.5)         R0
+R9       33R                     R0603                resistor             (737.5 925)           R0
+R10      1k                      R0603                resistor             (2950 1810)           R180
+R11      1k                      R0603                resistor             (2950 1882.5)         R180
+R12      1k                      R0603                resistor             (2950 1957.5)         R180
+R13      1k                      R0603                resistor             (2950 2035)           R180
+R14      10K                     R0603                resistor             (1540 320)            R180
+R15      10K                     R0603                resistor             (1510 557.5)          R270
+R16      10K                     R0603                resistor             (1232.5 922.5)        R0
+R17      330R                    R0603                resistor             (1232.5 857.5)        R180
+R18      33K                     R0603                resistor             (3384.54724 2339.17323) R90
+R19      10K                     R0603                resistor             (4700 2787.5)         R0
+R20      10K                     R0603                resistor             (4700 2850)           R0
+R21      0.05R                   R2512                SparkFun             (4762.5 3600)         R180
+R22      NP                      R0603                resistor             (735 2810)            R180
+R23      NP                      R0603                resistor             (1740 2690)           R0
+R24      10K                     R0603                resistor             (735 2875)            R0
+R25      10K                     R0603                resistor             (735 2625)            R0
+R26      10K                     R0603                resistor             (735 2750)            R0
+R27      10K                     R0603                resistor             (1742.5 2760)         R0
+R28      10K                     R0603                resistor             (1740 2832.5)         R0
+R29      10K                     R0603                resistor             (1740 2615)           R0
+R30      33K                     R0603                resistor             (2385 2682.5)         R0
+R31      0.05R                   R2512                SparkFun             (870 3600)            R180
+R32      0.05R                   R2512                SparkFun             (295 3595)            R0
+R33      0.05R                   R2512                SparkFun             (1855 3600)           R180
+R34      0.05R                   R2512                SparkFun             (1360 3602.5)         R0
+R35      2.2k                    R0603                resistor             (2735 2550)           R0
+R36      2.2k                    R0603                resistor             (2735 2487.5)         R0
+R37      100K                    R0603                resistor             (2600 2215)           R0
+R38      NP                      R0603                resistor             (2742.5 2757.5)       R0
+R39      NP                      R0603                resistor             (3747.5 2732.5)       R0
+R40      10K                     R0603                resistor             (2742.5 2685)         R0
+R41      10K                     R0603                resistor             (2742.5 2822.5)       R0
+R42      10K                     R0603                resistor             (2735 2617.5)         R0
+R43      10K                     R0603                resistor             (3751.9685 2800.7874) R0
+R44      10K                     R0603                resistor             (3745 2872.5)         R0
+R45      10K                     R0603                resistor             (3747.5 2660)         R0
+R46      0.05R                   R2512                SparkFun             (2860 3602.5)         R180
+R47      0.05R                   R2512                SparkFun             (2365 3600)           R0
+R48      0.05R                   R2512                SparkFun             (3852.5 3602.5)       R180
+R49      0.05R                   R2512                SparkFun             (3325 3597.5)         R0
+R50      330R                    R0603                resistor             (915 1130)            R180
+R51      22R                     R0603                resistor             (1460 2352.5)         R0
+R52      1.5K                    R0603                resistor             (1460 2272.5)         R0
+R53      10K                     R0603                resistor             (1460 2150)           R0
+R54      49.9R                   R0603                resistor             (907.5 1830)          R180
+R55      49.9R                   R0603                resistor             (920 1600)            R180
+R56      49.9R                   R0603                resistor             (920 1300)            R180
+R57      49.9R                   R0603                resistor             (920 1470)            R180
+R58      22R                     R0603                resistor             (1455 1930)           R0
+R59      22R                     R0603                resistor             (1455 1870)           R0
+R60      22R                     R0603                resistor             (1460 2210)           R0
+R61      330R                    R0603                resistor             (707.6378 1861.69291) R180
+R62      10K                     R0603                resistor             (1160 1855)           R90
+R63      12.1K                   R0603                resistor             (1025 1860)           R90
+R64      1M                      R0603                resistor             (1292.5 1832.5)       R180
+R65      5.6K                    R0603                resistor             (3505 345)            R90
+R66      5.6K                    R0603                resistor             (3845.86614 341.55512) R90
+R67      5.6K                    R0603                resistor             (2717.5 412.5)        R0
+R68      5.6K                    R0603                resistor             (2112.5 477.5)        R270
+R69      22R                     R0603                resistor             (2904.60618 882.08649) R270
+R70      22R                     R0603                resistor             (2025 672.5)          R0
+R71      10k                     R0603                resistor             (2376.04331 1117.79528) R0
+R72      10k                     R0603                resistor             (2025 800)            R0
+R73      22R                     R0603                resistor             (3325 1132.5)         R180
+R74      10k                     R0603                resistor             (3050 1011.65354)     R0
+R75      22R                     R0603                resistor             (3740 1152.5)         R90
+R76      10k                     R0603                resistor             (3560 1152.5)         R270
+R77      1k                      R0603                resistor             (2950 2107.5)         R180
+R78      2.2K                    R0603                resistor             (2945 2190)           R180
+R79      0.05R                   R2512                SparkFun             (4325 3600)           R0
+R80      NP                      R0603                resistor             (4700 2737.5)         R0
+R81      10K                     R0603                resistor             (4700 2675)           R0
+R82      22R                     R0603                resistor             (4387.5 1075)         R0
+R83      10k                     R0603                resistor             (4512.5 1075)         R0
+R84      5.6K                    R0603                resistor             (4687.5 1050)         R270
+R85      5.6K                    R0603                resistor             (4812.5 400)          R180
+R86      10k                     R0603                resistor             (4875 700)            R0
+R87      10k                     R0603                resistor             (4625 1337.5)         R270
+R88      22R                     R0603                resistor             (4750 700)            R180
+R89      10k                     R0603                resistor             (4287.5 1537.5)       R0
+R90      10k                     R0603                resistor             (2837.5 687.5)        R180
+R91      10k                     R0603                resistor             (2025 737.5)          R180
+R92      5k6                     R0603                resistor             (1150 1300)           R270
+R93      1k                      R0603                resistor             (1087.5 1300)         R270
+R94      1k                      R0603                resistor             (1287.5 1300)         R270
+R95      5k6                     R0603                resistor             (1350 1300)           R270
+R96      1k                      R0603                resistor             (1487.5 1300)         R270
+R97      5k6                     R0603                resistor             (1550 1300)           R270
+R98      1k                      R0603                resistor             (1212.5 1125)         R90
+R99      5k6                     R0603                resistor             (1150 1125)           R270
+R100     1k                      R0603                resistor             (1412.5 1125)         R90
+R101     5k6                     R0603                resistor             (1350 1125)           R270
+R102     1k                      R0603                resistor             (1612.5 1125)         R90
+R103     5k6                     R0603                resistor             (1550 1125)           R270
+RJ1      HR911105A               HR911105A            Itead_BP_110825.lbr  (405 1490)            R180
+RN1      4.7K                    0603-ARV             resistor-dil         (530 2570)            R0
+S1                               TACTILE_SWITCH_SMD   SparkFun             (1685 142.5)          R90
+S2                               TACTILE_SWITCH_SMD   SparkFun             (1582.5 780)          R90
+S3       SWITCH-MOMENTARY-LEDPTH TACTILE-PTH-LED-12MM Local Library        (1165 515)            R270
+SJ1                              SJ_3                 SparkFun             (614.76378 314.37008) MR180
+SJ2                              SJ_3                 SparkFun             (812.5 312.5)         MR0
+SJ3                              SJ_3                 SparkFun             (2775 1575)           MR180
+SL1                              08P                  con-amp-quick        (110 2910)            R270
+U$5      5MMCONN                 1715250000           eric_sorensen        (2392.81496 162.99213) R0
+U$6      5MMCONN                 1715250000           eric_sorensen        (1929.13386 162.99213) R0
+U$7      5MMCONN                 1715250000           eric_sorensen        (4637.5 162.99213)    R0
+U$10     5MMCONN                 1715250000           eric_sorensen        (3054.61417 162.99213) R180
+U1       USD-SOCKETNEW           MICRO-SD-SOCKET-PP   SparkFun             (630 2445)            R90
+X1                               180G-4               con-weidmueller-sl35 (595 3930)            R180
+X2                               180G-4               con-weidmueller-sl35 (1607.5 3925)         R180
+X3                               180G-4               con-weidmueller-sl35 (2612.5 3927.5)       R180
+X4                               180G-4               con-weidmueller-sl35 (3605 3940)           R180
+X5                               180G-4               con-weidmueller-sl35 (4537.5 3937.5)       R180
+X6                               180G-2               con-weidmueller-sl35 (4292.5 100)          R0
+X7                               180G-2               con-weidmueller-sl35 (3360 100)            R180
+X8                               180G-2               con-weidmueller-sl35 (3712.00787 100)      R180
+X9                               180G-2               con-weidmueller-sl35 (4962.5 950)          R270
+X10                              180G-2               con-weidmueller-sl35 (2958.74803 100)      R180
+X11                              180G-2               con-weidmueller-sl35 (4662.5 1860)         R270
+X12                              180G-2               con-weidmueller-sl35 (4662.5 2320)         R270
+X13                              180G-2               con-weidmueller-sl35 (2487.5 100)          R0
+X14      USBPTH                  USB-B-PTH            SparkFun             (472.44094 851.9685)  R0
+X15                              180G-2               con-weidmueller-sl35 (2025 100)            R0
+X16                              180G-2               con-weidmueller-sl35 (4737.5 100)          R180
