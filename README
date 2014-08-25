@@ -25,4 +25,38 @@ electronic card "software be asked to upload the image (jpg preferred) reference
 card he wants to test. If a card is highlighted by default as we have seen on
 previous images.
 
+4) Adjust the webcam
+
+	The first feature allows you to position the webcam using different slides available
+on the bench. It was at this point that the operator must allow the software to find the reference point
+(0.0) of the electronic card by pressing "setting reference point ',There are two solutions currently implemented or commented in the code:
+	the first was to light a LED controlled by an Arduino UNO, then take the position.The second is a simple manual calibration by clicking on the edge of the electronic card corressponding at (0,0) or the top corner left pictures taken (if you place the card in the direction of reading ahead on the bench, which leads the captured by the webcam image is to be an image in reverse of the card).
+
+	Then the reference point to set the conversion values ​​Pixels to mm with the "configuration of the scale units of pixels / mm" option, he lightsled a second then takes the coordinates of the spot (possible accuracy with small LED (0.3)) or this it just necessary to pressing "setting reference point", and clicking on the edge of the electronic card at the opposite. then exit feature that closes the video stream.
+
+5) Take a calibration picture
+
+	This feature should be used once the position of the fixed webcam, and for each type of card
+available (so 6 for the moment). Normally if there is no alteration to the position of the webcam, or the
+resolution. This feature will be used at the initial start of the bench. It will then
+reused in the event of data loss (over reference images) or in case of another type of card.
+Pressing exit closes the video stream.
+
+6) Take a picture of your card
+
+	Here is the main function for each new card to be tested, the operator clicks on "take one picture of
+your card. "
+pressing exit closes the video stream.
+
+7) Check your electronic card
+
+	This feature allows a first visual inspection of the various components missing.
+Pressing "List and url missing components" sent to the last feature.
+
+8) Find the components references
+
+	
+	This last window improves the visual inspection by a location of missing components
+followed by a list of names of the missing components. If the operator clicks on the name of the component, a
+web page to purchase opens.
 
