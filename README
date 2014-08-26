@@ -1,11 +1,18 @@
                             ScanComponentsPCB
 
-(You can find the bdd file at  ScanComponentsPCB/ScanComponentPCB/application.linux64/ReferencesComponents.db)
+- You can find the file code at ScanComponentsPCB/ScanComponentPCB/ScanComponentPCB.pde, and you can open this in the new processing sketch
 
-(You can find the file text wich all the 307 component of the SmoothieBoard electronic Card,
-output of the electronic Soft :EAGLE at ScanComponentsPCB/ScanComponentPCB/components)
+you need to install opencv for processing,ControlP5 (GUI for processing),Arduino (if you want use this solution for the calibration) and the BezierSQLib for use the database.
 
-The git project of the SoomthieBoard : https://github.com/Smoothieware/Smoothieboard
+
+- You can find the bdd file at  ScanComponentsPCB/ScanComponentPCB/application.linux64/ReferencesComponents.db
+
+- You can find the file text wich all the 307 component of the SmoothieBoard electronic Card,
+output of the electronic Soft :EAGLE at ScanComponentsPCB/ScanComponentPCB/components
+
+
+-- The git project of the SoomthieBoard : https://github.com/Smoothieware/Smoothieboard
+
 
 
 1) run the software for your OS, you arrive on the main window:
