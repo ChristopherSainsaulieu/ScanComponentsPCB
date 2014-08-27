@@ -59,10 +59,10 @@ static GUI4 s9;
 // declaration of objects
 
 //static Arduino arduino;
-
+static PVector locPixel;
 static Capture cam,cam2;  // representation of the cam
 static OpenCV opencv,opencv2,opencvRslt;  // object openCV
-static ControlP5 cp5; // object IHM
+static ControlP5 cp5,cp5f; // object IHM
 //String filename; // folder
 static int compt=0;  // Variable increment the filename
 static int comptrslt=0; // Variable increment the filename of the picture result
@@ -73,7 +73,7 @@ static String nomComposant="No missing components";
 double x,y;
 static String lienURL="https://www.google.fr/";
 static boolean LinkButton = false;
-static PVector locPixel;
+static float locPixelX,locPixelY;
 PApplet _this ;
 static File file;
 static DropdownList d1,d2,d3;
@@ -98,8 +98,10 @@ static boolean LinkButton1 = false;
 static boolean LinkButton2 = false;
 static boolean j=false;
 static boolean k=false;
-static float xref,xref2;
-static float yref,yref2;
+static float xref=0;
+static float xref2=0;
+static float yref=0;
+static float yref2=0;
 static  boolean save=false;
 static  boolean save2=false;
 
@@ -110,8 +112,11 @@ static float locx;
 static float locy;
 static int CheckNext=0;
 
-static String nameComponents[ ] = new String[1];
+static ArrayList<String> nameComponents = new ArrayList<String>();
+static ArrayList<String> lienURLlist = new ArrayList<String>();
 
+static boolean gard=false;
+static int numberMax=0;
 
 
 // colors
@@ -126,6 +131,8 @@ int bleuclair=color(0,255,255);
 int violet=color(255,0,255); 
 int orange=color(245,142,0);
 int gris=color(68,68,68);
+
+
 
 controlP5.Button a,b,c,d,e;
 
@@ -1184,7 +1191,6 @@ public static class FindYourMissingComponent2 extends PApplet {
      photoInit = loadImage(file.getPath());
      delay(1000);
    } else{
-     println("je charge typecard");
      photoInit = loadImage(TypeCard);
      delay(1000);
    }
@@ -1295,15 +1301,20 @@ void draw() {
 
 public static class FindComponentReference extends PApplet {
   
+
+  
  void setup() {
-   DropdownList d3;
+    DropdownList d3;
+     textSize(14);
+     //int blanc3=color(255,255,255);
+    //int blanc2=color(248,248,248);
     ControlP5 cp5f;
     cp5f = new ControlP5(this); 
     PFont pfont = createFont("Ubuntu",14,true);
      ControlFont font = new ControlFont(pfont,14);
     
     cp5f.setControlFont(font);
-    int numberMax=0;
+    
     
    db = new SQLite( this, "ReferencesComponents.db" );  // open database file
    delay(1000);
@@ -1311,52 +1322,117 @@ public static class FindComponentReference extends PApplet {
    delay(1000);  
    src.resize(800, 0);
    opencv = new OpenCV(this, src);
-   textSize(14);
+  
    //text(nomComposant, 820, 50);   
    //fill(0, 102, 153, 51);
     opencv.threshold(100);
     
-    //found every max of the picture.
-    locPixel = opencv.max(); 
-    numberMax=numberMax+1;
     
+    
+    //found every max of the picture.
+    locPixel = opencv.max();
+    
+      numberMax=numberMax+1;
+      
     xComponent = xref - locPixel.x;
     yComponent = locPixel.y-yref;
     xPixelsCard = xref-xref2;
     xComponentMM=(xComponent*xMMCard)/xPixelsCard;
     yComponentMM=(yComponent*xMMCard)/xPixelsCard;
     
-    
     //BDD(xComponent,yComponent);
     
     // for wait to finish the BDD mils to mm
-     locx=locPixel.x;
-     locy=locPixel.y;     
-     BDD(locx,locy);
-     
-     
-     
-     //nameComponents[0]=nomComposant;
-     
-     //every max found numberMax=numberMax+1
-     for(int nc=0;nc<numberMax;nc++){
-       try{
-     nameComponents[nc]=nomComposant;
-       }catch(NullPointerException e ){
+    locx=locPixel.x;
+    locy=locPixel.y;
+    BDD(locx,locy);
+    //nameComponents[0]=nomComposant;
     
-       }
-     }
+    
+    nameComponents.add(nomComposant);
+    lienURLlist.add(lienURL);
+    
+
+    d3 = cp5f.addDropdownList("List of missing components")
+      .setPosition(820, 70)
+      ;
+      
+    customize2(d3); // customize the first list
+
+    
+    
+  
+   //src.save("monimage.jpg");
+    
+  
+}
+
+void draw() {
+  
+  // the solution that don't work here but it's work in the other sketch for find every missing component
+
+//image(opencv.getOutput(), 0, 0);
+    /*loadPixels(); 
+     image(opencv.getOutput(), 0, 0);
+    
+    //println("loadpixels");
+    // Loop through every pixel column
+for (int x = 0; x < width; x++) {
+ 
+  // Loop through every pixel row
+  for (int y = 0; y < height; y++) {
+    
+    // Use the formula to find the 1D location
+        int loc = x + y * width;
+        
+    if (pixels[loc]<=color(255,255,255) && pixels[loc]>color(127, 127, 127 ) ){
+     println("i find white color"); 
+      locPixelX=x;
+      locPixelY=y;
+      
+      numberMax=numberMax+1;*/
+      
+    /*
+      xComponent = xref - locPixelX;
+      yComponent = locPixelY-yref;
+      xPixelsCard = xref-xref2;
+      xComponentMM=(xComponent*xMMCard)/xPixelsCard;
+      yComponentMM=(yComponent*xMMCard)/xPixelsCard;
+      */
+      //BDD(xComponent,yComponent);
+    /*  println(locPixelX,locPixelY);
+      
+      BDD(locPixelX,locPixelY);
+      nameComponents.add(nomComposant);
+      lienURLlist.add(lienURL);
      
+      
+      stroke(255, 0, 0);
+      noFill();
+      rect(x-3, y-3, 10, 10);
+    } 
+   
+    
+  }
+  
+ gard=true;
+}
+
+if(gard==true){
+  gard=false;
+   // src.save("la seconde image");
      d3 = cp5f.addDropdownList("List of missing components")
           .setPosition(820, 70)
           ;
           
-  customize2(d3); // customize the first list
-    
-}
-
-void draw() {
-
+     customize2(d3); // customize the first list
+}*/
+  
+ 
+  
+  
+  // the solution for find one missing component only
+  
   locPixel = opencv.max(); 
   //opencv.getOutput();
   image(opencv.getOutput(), 0, 0);
@@ -1366,20 +1442,15 @@ void draw() {
   noFill();
   rect(locPixel.x, locPixel.y, 50, 30);
   
+ if (nameComponents.size() == 0) {
+    textSize(14);
+    text("There are no missing components.",200,200);
+    fill(0, 102, 153, 51);
+     //exit();
+  }else{
+    
+  }
   
-  /*
-  text(nomComposant, 820, 50);   
-  fill(0, 102, 153, 51);*/
-
-// Left buttom
-  /*if (LinkButton == true) {
-    fill(255);
-  } else {
-    noFill();
-  }*/
-   
-
-
 
 } // end of draw
 
@@ -1403,27 +1474,17 @@ void BDD(float locx,float locy){
     }
   
 }
-/*
-void mousePressed() {
-  if (LinkButton) {
-    try{
-    link(lienURL);
-    }
-   catch(NullPointerException e){
-    link("https://www.google.fr/?gws_rd=ssl");
-   } 
-  }
-}*/
+
 
 // select the type of webcam
 void controlEvent(ControlEvent theEvent) {
 if(theEvent.isGroup()){
       
   
-  for(int j=0; j<nameComponents.length; j++){
+  for(int j=0; j<nameComponents.size(); j++){
   if(theEvent.getGroup().getValue()==j){
       try{
-            link(lienURL);
+            link(lienURLlist.get(j));
         }catch(NullPointerException e){
     
           link("https://www.google.fr/?gws_rd=ssl");
@@ -1450,16 +1511,18 @@ if(theEvent.isGroup()){
   ddl.valueLabel().style().marginTop = 5;
 
   
-  if (nameComponents.length == 0) {
-    println("There are no cameras available for capture.");
-     exit();
+  if (nameComponents.size() == 0) {
+    textSize(14);
+    text("There are no missing components.",200,200);
+    fill(0, 102, 153, 51);
+     //exit();
   } else {
     
-    for ( int i=0; i<nameComponents.length;i++){
+    for ( int i=0; i<nameComponents.size();i++){
       try{
-      ddl.addItem(nameComponents[i], i);  // nameComponents[0], nameComponents[1]
+      ddl.addItem(nameComponents.get(i), i);  // nameComponents[0], nameComponents[1]
       }catch(NullPointerException e){
-       ddl.addItem(nameComponents[i-1], i);  
+       ddl.addItem(nameComponents.get(i-1), i);  
       }
     }
     

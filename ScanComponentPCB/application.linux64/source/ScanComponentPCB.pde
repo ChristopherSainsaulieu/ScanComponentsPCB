@@ -59,10 +59,10 @@ static GUI4 s9;
 // declaration of objects
 
 //static Arduino arduino;
-
+static PVector locPixel;
 static Capture cam,cam2;  // representation of the cam
 static OpenCV opencv,opencv2,opencvRslt;  // object openCV
-static ControlP5 cp5; // object IHM
+static ControlP5 cp5,cp5f; // object IHM
 //String filename; // folder
 static int compt=0;  // Variable increment the filename
 static int comptrslt=0; // Variable increment the filename of the picture result
@@ -73,10 +73,10 @@ static String nomComposant="No missing components";
 double x,y;
 static String lienURL="https://www.google.fr/";
 static boolean LinkButton = false;
-static PVector locPixel;
+static float locPixelX,locPixelY;
 PApplet _this ;
 static File file;
-DropdownList d1,d2;
+static DropdownList d1,d2,d3;
 static String nameCam;
 static String Width;
 static String Height;
@@ -98,8 +98,10 @@ static boolean LinkButton1 = false;
 static boolean LinkButton2 = false;
 static boolean j=false;
 static boolean k=false;
-static float xref,xref2;
-static float yref,yref2;
+static float xref=0;
+static float xref2=0;
+static float yref=0;
+static float yref2=0;
 static  boolean save=false;
 static  boolean save2=false;
 
@@ -108,7 +110,13 @@ static SQLite db;
 
 static float locx;
 static float locy;
+static int CheckNext=0;
 
+static ArrayList<String> nameComponents = new ArrayList<String>();
+static ArrayList<String> lienURLlist = new ArrayList<String>();
+
+static boolean gard=false;
+static int numberMax=0;
 
 
 // colors
@@ -123,6 +131,8 @@ int bleuclair=color(0,255,255);
 int violet=color(255,0,255); 
 int orange=color(245,142,0);
 int gris=color(68,68,68);
+
+
 
 controlP5.Button a,b,c,d,e;
 
@@ -204,7 +214,7 @@ controlP5.Button a,b,c,d,e;
   public static  class PFrame5 extends JFrame {
      public PFrame5() {
       //size of window stable
-      setBounds(0, 0, 980, 495);
+      setBounds(0, 0, 1150, 495);
       s4= new FindComponentReference();
       add(s4);
       s4.init();
@@ -266,13 +276,13 @@ public static class PFrame7 extends JFrame {
     }
   }
 
-String[] cameras = Capture.list();
+static String[] cameras = Capture.list();
 
 //setup for the main window
 
  void setup(){
-     PFont pfont = createFont("Arial",10,true);
-     ControlFont font = new ControlFont(pfont,10);
+     PFont pfont = createFont("Ubuntu",14,true);
+     ControlFont font = new ControlFont(pfont,14);
      
 
    
@@ -280,7 +290,7 @@ String[] cameras = Capture.list();
    cp5 = new ControlP5(this); // GUI object
    cp5.setControlFont(font);
    // create a new button with name 'adjust the webcam'
-     d1 = cp5.addDropdownList("Choice of Webcam")
+     d1 = cp5.addDropdownList("Select your Webcam")
           .setPosition(0, 50)
           ;
           
@@ -690,22 +700,22 @@ void mousePressed()
   }
 }
 
-void customize(DropdownList ddl) {
+ void customize(DropdownList ddl) {
   // a convenience function to customize a DropdownList
   ddl.setWidth(310);
   //ddl.setFont(font);
   ddl.setBackgroundColor(gris);
   //ddl.setItemHeight(20);
   ddl.setBarHeight(24);
-  ddl.captionLabel().set("Select your webcam");
-  ddl.captionLabel().style().marginTop = 5;
-  ddl.captionLabel().style().marginLeft = 20;
+  //ddl.captionLabel().set("Select your webcam");
+  ddl.captionLabel().style().marginTop = 3;
+  ddl.captionLabel().style().marginLeft = 5;
   ddl.valueLabel().style().marginTop = 5;
 
   
   if (cameras.length == 0) {
     println("There are no cameras available for capture.");
-    exit();
+     exit();
   } else {
     
     for ( int i=0; i<cameras.length;i++){
@@ -716,7 +726,9 @@ void customize(DropdownList ddl) {
   
   ddl.setColorBackground(gris);
   ddl.setColorActive(color(255, 128));
-}  
+} 
+
+
   
     
 // configure position webcam
@@ -885,6 +897,10 @@ public static class GUI2 extends PApplet {
   void mousePressed() {
   if (mouseX > 410 && mouseX < 430 && mouseY > 15 && mouseY < 35) {
      // open l'autre frame
+     
+                         GUI2.setVisible(false);
+                         FindYourMissingComponent2.setVisible(false);
+                         
                          FindComponentReference = new PFrame5();
                          FindComponentReference.setTitle("Find the components references");
                          FindComponentReference.setLocationRelativeTo(null);
@@ -896,6 +912,17 @@ public static class GUI2 extends PApplet {
     GUI2.setVisible(false);
     FindYourMissingComponent2.setVisible(false);
   }else if(mouseX > 410 && mouseX < 430 && mouseY > 70 && mouseY < 90){
+    
+    FindYourMissingComponent2.setVisible(false);
+    if(CheckNext<compt){
+    CheckNext=CheckNext+1;
+    }
+    delay(100);
+      GUI2.setVisible(false);
+      FindYourMissingComponent2 = new PFrame6();
+      FindYourMissingComponent2.setTitle("Check the next card");
+      FindYourMissingComponent2.setLocationRelativeTo(null);
+      FindYourMissingComponent2.setVisible(true);
     
   }
 }
@@ -1078,11 +1105,12 @@ void draw() {
   noFill();
   stroke(0, 255, 0);
   strokeWeight(3);
+  
   if(save2==true){
    save2=false; 
    imgSrc=cam.get();
    imgSrc.save("Photo"+str(compt)+".jpg");
-   compt=compt+1;
+  // compt=compt+1;
     
   }
   
@@ -1163,40 +1191,45 @@ public static class FindYourMissingComponent2 extends PApplet {
      photoInit = loadImage(file.getPath());
      delay(1000);
    } else{
-     println("je charge typecard");
      photoInit = loadImage(TypeCard);
      delay(1000);
    }
    //photoInit =loadImage("PhotoInit.jpg");
-   
-  CheckYourCardp = loadImage("Photo0.jpg");
+   try{
+  CheckYourCardp = loadImage("Photo"+str(CheckNext)+".jpg");
   
-  //try{
+   }catch(NullPointerException e){
+    
+   }
+  
+  try{
     
   opencv = new OpenCV(this, photoInit);
   
-     /* }catch(NullPointerException e){
+      }catch(NullPointerException e){
    
         opencv= new OpenCV(this, CheckYourCardp);  // very bad situation !
-  }*/
+  }
   
-  
+  try{
   opencv2 = new OpenCV(this,CheckYourCardp);
-  
+  }catch(NullPointerException e){
+    opencv2 = new OpenCV(this,photoInit);
+  }
   //opencv.adaptiveThreshold(591, 1);
   //photoInit = opencv.getSnapshot();
   
  // opencv2.adaptiveThreshold(591,1);
   //CheckYourCardp = opencv2.getSnapshot();
   
-  //try{
+  try{
      
     opencv2.diff(photoInit);
   
-     /* }catch(NullPointerException e){
+      }catch(NullPointerException e){
     
         opencv2.diff(CheckYourCardp);  //very bad situation !
-  }*/
+  }
   findYourMissingComponent = opencv2.getSnapshot();
   delay(1000);
   findYourMissingComponent.save("resultat0.jpg");
@@ -1215,10 +1248,18 @@ public static class FindYourMissingComponent2 extends PApplet {
  //imgfinal.save("resultat0.jpg");
  
  //never put this three line in the draw, otherwise he re-dimension the picture, and this don't works:
+   try{
    photoInit.resize(1920/2,1080/2);  // 960,540
+   }catch(NullPointerException e){
+   }
+   try{
    CheckYourCardp.resize(1920/2,1080/2);
+   }catch(NullPointerException e){
+   }
+   try{
    imgfinal.resize(1920/2,1080/2);
-  
+   }catch(NullPointerException e){
+   }
 }
 
 void draw() {
@@ -1227,9 +1268,23 @@ void draw() {
   
   pushMatrix();
   scale(0.5);
+  try{
   image(photoInit, 0, 0); //image(img, 0, 0, width/2, height/2);
+  }catch(NullPointerException e){
+  }
+  try{
   image(CheckYourCardp, photoInit.width, 0);  //image(img, photoInit.width/2, 0, width/2, height/2);
+  }catch(NullPointerException e){
+    textSize(20);
+    text("you can not change the card",1100,300);
+    fill(0, 102, 153);
+    text("because you don't have took a picture of another card",1100,350);
+    fill(0, 102, 153);
+  }
+  try{
   image(imgfinal, photoInit.width, photoInit.height);  // image(img, photoInit.width/2, photoInit.height/2, width/2, height/2);
+  }catch(NullPointerException e){
+  }  
   popMatrix();
   
   fill(255);
@@ -1246,39 +1301,138 @@ void draw() {
 
 public static class FindComponentReference extends PApplet {
   
+
+  
  void setup() {
-   
+    DropdownList d3;
+     textSize(14);
+     //int blanc3=color(255,255,255);
+    //int blanc2=color(248,248,248);
+    ControlP5 cp5f;
+    cp5f = new ControlP5(this); 
+    PFont pfont = createFont("Ubuntu",14,true);
+     ControlFont font = new ControlFont(pfont,14);
+    
+    cp5f.setControlFont(font);
+    
+    
    db = new SQLite( this, "ReferencesComponents.db" );  // open database file
    delay(1000);
    src = loadImage("resultat0.jpg");
    delay(1000);  
    src.resize(800, 0);
-   size(src.width, src.height);
    opencv = new OpenCV(this, src);
-   textSize(14);
+  
    //text(nomComposant, 820, 50);   
    //fill(0, 102, 153, 51);
     opencv.threshold(100);
     
-    locPixel = opencv.max(); 
     
+    
+    //found every max of the picture.
+    locPixel = opencv.max();
+    
+      numberMax=numberMax+1;
+      
     xComponent = xref - locPixel.x;
     yComponent = locPixel.y-yref;
     xPixelsCard = xref-xref2;
     xComponentMM=(xComponent*xMMCard)/xPixelsCard;
     yComponentMM=(yComponent*xMMCard)/xPixelsCard;
     
-    
     //BDD(xComponent,yComponent);
     
     // for wait to finish the BDD mils to mm
-     locx=locPixel.x;
-     locy=locPixel.y;     
-     BDD(locx,locy);
+    locx=locPixel.x;
+    locy=locPixel.y;
+    BDD(locx,locy);
+    //nameComponents[0]=nomComposant;
+    
+    
+    nameComponents.add(nomComposant);
+    lienURLlist.add(lienURL);
+    
+
+    d3 = cp5f.addDropdownList("List of missing components")
+      .setPosition(820, 70)
+      ;
+      
+    customize2(d3); // customize the first list
+
+    
+    
+  
+   //src.save("monimage.jpg");
+    
+  
 }
 
 void draw() {
+  
+  // the solution that don't work here but it's work in the other sketch for find every missing component
 
+//image(opencv.getOutput(), 0, 0);
+    /*loadPixels(); 
+     image(opencv.getOutput(), 0, 0);
+    
+    //println("loadpixels");
+    // Loop through every pixel column
+for (int x = 0; x < width; x++) {
+ 
+  // Loop through every pixel row
+  for (int y = 0; y < height; y++) {
+    
+    // Use the formula to find the 1D location
+        int loc = x + y * width;
+        
+    if (pixels[loc]<=color(255,255,255) && pixels[loc]>color(127, 127, 127 ) ){
+     println("i find white color"); 
+      locPixelX=x;
+      locPixelY=y;
+      
+      numberMax=numberMax+1;*/
+      
+    /*
+      xComponent = xref - locPixelX;
+      yComponent = locPixelY-yref;
+      xPixelsCard = xref-xref2;
+      xComponentMM=(xComponent*xMMCard)/xPixelsCard;
+      yComponentMM=(yComponent*xMMCard)/xPixelsCard;
+      */
+      //BDD(xComponent,yComponent);
+    /*  println(locPixelX,locPixelY);
+      
+      BDD(locPixelX,locPixelY);
+      nameComponents.add(nomComposant);
+      lienURLlist.add(lienURL);
+     
+      
+      stroke(255, 0, 0);
+      noFill();
+      rect(x-3, y-3, 10, 10);
+    } 
+   
+    
+  }
+  
+ gard=true;
+}
+
+if(gard==true){
+  gard=false;
+   // src.save("la seconde image");
+     d3 = cp5f.addDropdownList("List of missing components")
+          .setPosition(820, 70)
+          ;
+          
+     customize2(d3); // customize the first list
+}*/
+  
+ 
+  
+  
+  // the solution for find one missing component only
+  
   locPixel = opencv.max(); 
   //opencv.getOutput();
   image(opencv.getOutput(), 0, 0);
@@ -1287,18 +1441,16 @@ void draw() {
   strokeWeight(4);
   noFill();
   rect(locPixel.x, locPixel.y, 50, 30);
-  text(nomComposant, 820, 50);   
-  fill(0, 102, 153, 51);
-
-// Left buttom
-  if (LinkButton == true) {
-    fill(255);
-  } else {
-    noFill();
+  
+ if (nameComponents.size() == 0) {
+    textSize(14);
+    text("There are no missing components.",200,200);
+    fill(0, 102, 153, 51);
+     //exit();
+  }else{
+    
   }
-   
-
-
+  
 
 } // end of draw
 
@@ -1323,32 +1475,62 @@ void BDD(float locx,float locy){
   
 }
 
-void mousePressed() {
-  if (LinkButton) {
-    try{
-    link(lienURL);
-    }
-   catch(NullPointerException e){
-    link("https://www.google.fr/?gws_rd=ssl");
-   } 
+
+// select the type of webcam
+void controlEvent(ControlEvent theEvent) {
+if(theEvent.isGroup()){
+      
+  
+  for(int j=0; j<nameComponents.size(); j++){
+  if(theEvent.getGroup().getValue()==j){
+      try{
+            link(lienURLlist.get(j));
+        }catch(NullPointerException e){
+    
+          link("https://www.google.fr/?gws_rd=ssl");
+     } 
+      }
+      
   }
 }
+}  // end of select the type of webcam
 
-void mouseMoved() {
-  checkButtons();
-}
- 
-void mouseDragged() {
-  checkButtons();
-}
 
-void checkButtons() {
-  if (mouseX > 820 && mouseX < 980 && mouseY > 30 && mouseY < 50) {
-    LinkButton = true; 
+
+ void customize2(DropdownList ddl) {
+  // a convenience function to customize a DropdownList
+  ddl.setWidth(300);
+  //ddl.setFont(font);
+  int grisl=color(68,68,68);
+  ddl.setBackgroundColor(grisl);
+  //ddl.setItemHeight(20);
+  ddl.setBarHeight(24);
+  ddl.captionLabel().set("List of the missing components");
+  ddl.captionLabel().style().marginTop = 3;
+  ddl.captionLabel().style().marginLeft = 5;
+  ddl.valueLabel().style().marginTop = 5;
+
+  
+  if (nameComponents.size() == 0) {
+    textSize(14);
+    text("There are no missing components.",200,200);
+    fill(0, 102, 153, 51);
+     //exit();
   } else {
-    LinkButton = false;
+    
+    for ( int i=0; i<nameComponents.size();i++){
+      try{
+      ddl.addItem(nameComponents.get(i), i);  // nameComponents[0], nameComponents[1]
+      }catch(NullPointerException e){
+       ddl.addItem(nameComponents.get(i-1), i);  
+      }
+    }
+    
   }
-}
+  
+  ddl.setColorBackground(grisl);
+  ddl.setColorActive(color(255, 128));
+} 
 
    
 }   // end of FindComponentReference
