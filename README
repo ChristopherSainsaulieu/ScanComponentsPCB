@@ -1,5 +1,7 @@
                             ScanComponentsPCB
 
+-you can find the article on HackADay at this link : http://hackaday.io/project/2878-ScanComponentsPCB
+
 - you can find the website page of the project here : http://christophersainsaulieu.github.io/ScanComponentsPCB/
 
 - You can find the file code at ScanComponentsPCB/ScanComponentPCB/ScanComponentPCB.pde, and you can open this in the new processing sketch
@@ -14,6 +16,19 @@ output of the electronic Soft :EAGLE at ScanComponentsPCB/ScanComponentPCB/compo
 
 
 -- The git project of the SoomthieBoard : https://github.com/Smoothieware/Smoothieboard
+
+
+If you want run the application on your PC :
+
+1) Download the .zip project on github or the website of the project.
+
+2) install Processing.
+
+3) With Processing, add a library -> install : Opencv for Processing, ControlP5 and BezierSQLlite.
+
+4) On Linux : install the Oracle'sJDK because the library is incompatible with OpenJDK and demands Oracle's JDK.
+
+5) It's work ! You can run the application at ScanComponentPCB/application.linux64/ScanComponentPCB for exemple.
 
 
 
