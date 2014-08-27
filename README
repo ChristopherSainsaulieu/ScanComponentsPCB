@@ -17,55 +17,33 @@ output of the electronic Soft :EAGLE at ScanComponentsPCB/ScanComponentPCB/compo
 
 
 
-1) run the software for your OS, you arrive on the main window:
+1) run the software for your OS, you arrive on the main window: The main window consists of three parts mainly : a party selects its webcam (the list any webcam software, resolution and FPS (Frame Per Second) available connected to the PC of the test-bed). A second portion that allows you to select the type of card you want to test. The test-bed have been developped with the SmoothieBoard electronic card, so actually you can choose between the 6 versions of the SmoothieBoard electronic card. Then the part of the various buttons available for launching various software functionality. 
 
-	The main window consists of three parts mainly: a party selects its
-webcam (the list any webcam software, resolution and FPS (Frame Per Second) available connected to the PC the test bench). A second portion that allows you to select the type of card you want to test. Then the part of the various buttons available for launching various software functionality.
+2) selection of the webcam: 
 
+If the operator forget to select a webcam, the software defaults to the webcam plugged in first available port (USB webcam or computer) ('/ dev video0), and the resolution of 640 * 480. The ideal is to make a USB ('/ dev / video1') webcam with a resolution of 1920 * 1080. 
 
-2) selection of the webcam:
+ 3) select the type of card:
 
-	If the operator fails to select a webcam, the software defaults to the webcam plugged in first available port (USB webcam or computer) ('/ dev video0), and the resolution of 640 * 480. The ideal is to make a USB ('/ dev / video1') webcam with a resolution of 1920 * 1080.
+ If the user does not select a reference card, when launching the "Check your  electronic card "software be asked to upload the image (jpg preferred) reference by type card you want to test.
 
-3) select the type of card:
-	
-	If the user does not select a reference card, when launching the "Check your feature
-electronic card "software be asked to upload the image (jpg preferred) reference by type
-card he wants to test. If a card is highlighted by default as we have seen on
-previous images.
+ 4) Adjust the webcam: 
 
-4) Adjust the webcam
+The first functionality allows you to position the webcam using different slides available on the test-bed. It was at this point that the operator must allow the software to find the reference point (0.0) of the electronic card by pressing "setting reference point ',There are two solutions currently implemented or commented in the code: the first was to light a LED controlled by an Arduino UNO, then take the position.The second is a simple manual calibration by clicking on the edge of the electronic card corressponding at (0,0) or the top corner left pictures taken (if you place the card in the direction of reading ahead on the bench, which leads the captured by the webcam image is to be an image in reverse of the card). Then the reference point to set the conversion values Pixels to mm with the "configuration of the scale units of pixels / mm" option, he lightsled a second then takes the coordinates of the spot (possible accuracy with small LED (0.3)) or this it just necessary to pressing "setting reference point", and clicking on the edge of the electronic card at the opposite. then exit feature that closes the video stream. 
 
-	The first feature allows you to position the webcam using different slides available
-on the bench. It was at this point that the operator must allow the software to find the reference point
-(0.0) of the electronic card by pressing "setting reference point ',There are two solutions currently implemented or commented in the code:
-	the first was to light a LED controlled by an Arduino UNO, then take the position.The second is a simple manual calibration by clicking on the edge of the electronic card corressponding at (0,0) or the top corner left pictures taken (if you place the card in the direction of reading ahead on the bench, which leads the captured by the webcam image is to be an image in reverse of the card).
+5) Take a calibration picture:
 
-	Then the reference point to set the conversion values ​​Pixels to mm with the "configuration of the scale units of pixels / mm" option, he lightsled a second then takes the coordinates of the spot (possible accuracy with small LED (0.3)) or this it just necessary to pressing "setting reference point", and clicking on the edge of the electronic card at the opposite. then exit feature that closes the video stream.
+ This functionality should be used once the position of the fixed webcam, and for each type of card available (so 6 for the moment). Normally if there is no alteration to the position of the webcam, or the resolution. This functionality will be used at the initial start of the bench. It will then reused in the event of data loss (over reference images) or in case of another type of card. Pressing exit closes the video stream.
 
-5) Take a calibration picture
+ 6) Take a picture of your card:
 
-	This feature should be used once the position of the fixed webcam, and for each type of card
-available (so 6 for the moment). Normally if there is no alteration to the position of the webcam, or the
-resolution. This feature will be used at the initial start of the bench. It will then
-reused in the event of data loss (over reference images) or in case of another type of card.
-Pressing exit closes the video stream.
+ Here is the main function for each new card to be tested, the operator clicks on "take one picture of your card. " pressing exit closes the video stream.
 
-6) Take a picture of your card
+ 7) Check your electronic card:
 
-	Here is the main function for each new card to be tested, the operator clicks on "take one picture of
-your card. "
-pressing exit closes the video stream.
+ This functionality allows a first visual inspection of the various components missing. Pressing "List and url missing components" sent to the last functionality.
 
-7) Check your electronic card
+8) Find the components references:
 
-	This feature allows a first visual inspection of the various components missing.
-Pressing "List and url missing components" sent to the last feature.
-
-8) Find the components references
-
-	
-	This last window improves the visual inspection by a location of missing components
-followed by a list of names of the missing components. If the operator clicks on the name of the component, a
-web page to purchase opens.
+ This last window improves the visual inspection by a location of missing components followed by a list of names of the missing components. If the operator clicks on the name of the component, a web page to purchase opens.​
 
